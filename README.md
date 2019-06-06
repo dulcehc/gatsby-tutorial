@@ -51,3 +51,27 @@ baseUrl: "myportfolio.lndo.site"
 5. Open the file gatbsy-node.js and add configuration from the section [Site’s gatsby-node.js example](https://www.gatsbyjs.org/packages/gatsby-source-wordpress/?=wordpress#sites-gatsby-nodejs-example)
 
 
+### Wordpress Site
+
+1. Move the "empty" folder from this project to the Wordpress themes folder, you should have the following:
+
+```
+wordpress-site/wp-content/themes
+
+empty           index.php       twentynineteen  twentyseventeen twentysixteen
+```
+
+2. Go to your admin panel, e.g https://wordpress-site.lndo.site/wp-admin/.
+
+3. Go to Appearance -> Themes -> Empty Theme Starter -> Activate
+
+![image](https://user-images.githubusercontent.com/19391835/59040731-ec934300-883c-11e9-820a-6b90afaa699e.png)
+
+4. Visit your Wordpress site and you should see that it's blank.
+
+
+
+
+
+
+
