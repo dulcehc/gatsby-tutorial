@@ -70,8 +70,30 @@ empty           index.php       twentynineteen  twentyseventeen twentysixteen
 4. Visit your Wordpress site and you should see that it's blank.
 
 
+### Rendering Data and GraphQL
+
+1. Copy the folder templates from this repository into your src folder.
+
+![image](https://user-images.githubusercontent.com/19391835/59042216-a9869f00-883f-11e9-8dcc-f3aff8e5e407.png)
 
 
+2. Execute the Gatsby project:
+```
+gatsby develop
+```
+
+or
+
+```
+npm run develop
+```
+
+3. In the console, you should see a link to GraphiQL: http://localhost:8000/___graphql, open it in your browser.
 
 
+![image](https://user-images.githubusercontent.com/19391835/59042551-434e4c00-8840-11e9-8432-808dcbd8907d.png)
+
+4. This query will retrieve the information from the Wordpress pages of your current site.
+
+You can use the Explorer (Left Menu) to see all the different data that you can query.
 
