@@ -14,8 +14,8 @@ const slash = require(`slash`)
 // Will create pages for WordPress pages (route : /{slug})
 // Will create pages for WordPress posts (route : /post/{slug})
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-
+  const { createPage, createRedirect } = actions
+  createRedirect({ fromPath: '/', toPath: '/sample-page', redirectInBrowser: true, isPermanent: true })
   // The “graphql” function allows us to run arbitrary
   // queries against the local Gatsby GraphQL schema. Think of
   // it like the site has a built-in database constructed
@@ -29,6 +29,9 @@ exports.createPages = async ({ graphql, actions }) => {
             path
             status
             template
+            title
+            content
+            template
           }
         }
       }
@@ -40,6 +43,8 @@ exports.createPages = async ({ graphql, actions }) => {
             status
             template
             format
+            title
+            content
           }
         }
       }
@@ -52,7 +57,10 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost } = result.data
+  const {
+    allWordpressPage,
+    allWordpressPost
+  } = result.data
 
   // Create Page pages.
   const pageTemplate = path.resolve(`./src/templates/page.js`)
@@ -71,9 +79,7 @@ exports.createPages = async ({ graphql, actions }) => {
       // can query data specific to each page.
       path: edge.node.path,
       component: slash(pageTemplate),
-      context: {
-        id: edge.node.id,
-      },
+      context: edge.node,
     })
   })
 
@@ -86,9 +92,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: edge.node.path,
       component: slash(postTemplate),
-      context: {
-        id: edge.node.id,
-      },
+      context: edge.node
     })
   })
 }

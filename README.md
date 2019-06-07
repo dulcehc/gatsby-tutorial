@@ -1,10 +1,10 @@
-# gatsby-tutorial
+# Gatsby and Wordpress Tutorial
 
 ### Requirements
 
 1. Node JS
 2. npm or yarn
-3. A Wordpress site running on your local
+3. A Wordpress site running on your local, with one page and one post.
 
 ### Setting up Gatsby
 
@@ -45,7 +45,7 @@ npm install --save gatsby-source-wordpress
 4. Update the baseUrl with your local Wordpress URL, for example:
 
 ```
-baseUrl: "myportfolio.lndo.site"
+baseUrl: "wordpress-site.lndo.site"
 ```
 
 5. Open the file gatbsy-node.js and add configuration from the section [Site’s gatsby-node.js example](https://www.gatsbyjs.org/packages/gatsby-source-wordpress/?=wordpress#sites-gatsby-nodejs-example)
@@ -96,4 +96,9 @@ npm run develop
 4. This query will retrieve the information from the Wordpress pages of your current site.
 
 You can use the Explorer (Left Menu) to see all the different data that you can query.
+
+
+5. If you visit http://localhost:8000, you should be redirected to http://localhost:8000/sample-page.
+
+![image](https://user-images.githubusercontent.com/19391835/59079749-c7d5b480-88aa-11e9-9ca4-fd5eb0717e74.png)
 

@@ -15,17 +15,19 @@ import "./layout.css"
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+    {
+      allWordpressSiteMetadata{
+        edges {
+          node {
+            name
           }
         }
       }
+    }
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.allWordpressSiteMetadata.edges[0].node.name} />
         <div
           style={{
             margin: `0 auto`,
